@@ -23,6 +23,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByBlockEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 
 
 /**
@@ -32,25 +33,16 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
  * @author Scott Woodward
  */
 public class ShopKeeperDamageListener implements Listener {
-    
-    @EventHandler
-    public void onShopKeeperDamage(EntityDamageByEntityEvent event){
-        LivingEntity entity = (LivingEntity)event.getEntity();
-        if(entity.getCustomName() == null){
-            
-        }else if(entity.getCustomName().equals("Shop Keeper")){
-            event.setCancelled(true);
-        }
-    }
-    
-    @EventHandler
-    public void onShopKeeperDamage(EntityDamageByBlockEvent event){
-        LivingEntity entity = (LivingEntity)event.getEntity();
-        if(entity.getCustomName() == null){
-            
-        }else if(entity.getCustomName().equals("Shop Keeper")){
-            event.setCancelled(true);
-        }
-    }
 
+    @EventHandler 
+    public void onShopKeeperDamage(EntityDamageEvent event){
+        if(event.getEntity() instanceof LivingEntity){
+            LivingEntity entity = (LivingEntity)event.getEntity();
+            if(entity.getCustomName() != null){
+                if(entity.getCustomName().equals("Shop Keeper")){
+                    event.setCancelled(true);
+                }
+            }
+        }
+    }
 }
