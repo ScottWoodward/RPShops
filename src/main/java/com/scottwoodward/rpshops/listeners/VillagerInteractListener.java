@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.DyeColor;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.entity.Villager;
 import org.bukkit.event.EventHandler;
@@ -45,6 +46,9 @@ public class VillagerInteractListener implements Listener {
     @EventHandler
     public void onInteract(PlayerInteractEntityEvent event){
         if(event.getRightClicked() instanceof Villager){
+            if(event.getPlayer().getGameMode() == GameMode.CREATIVE){
+                return;
+            }
             event.setCancelled(true);
             Inventory inv = Bukkit.getServer().createInventory(event.getPlayer(), 9, "Shop");
             
