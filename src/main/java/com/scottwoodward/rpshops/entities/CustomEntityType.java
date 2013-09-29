@@ -22,9 +22,9 @@ import java.lang.reflect.Method;
 
 import org.bukkit.entity.EntityType;
 
-import net.minecraft.server.v1_6_R2.EntityInsentient;
-import net.minecraft.server.v1_6_R2.EntityTypes;
-import net.minecraft.server.v1_6_R2.EntityVillager;
+import net.minecraft.server.v1_6_R3.EntityInsentient;
+import net.minecraft.server.v1_6_R3.EntityTypes;
+import net.minecraft.server.v1_6_R3.EntityVillager;
 
 /**
  * CustomEntityType.java

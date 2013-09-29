@@ -20,14 +20,14 @@ package com.scottwoodward.rpshops.entities;
 
 import java.lang.reflect.Field;
 
-import org.bukkit.craftbukkit.v1_6_R2.util.UnsafeList;
+import org.bukkit.craftbukkit.v1_6_R3.util.UnsafeList;
 
-import net.minecraft.server.v1_6_R2.EntityAgeable;
-import net.minecraft.server.v1_6_R2.EntityHuman;
-import net.minecraft.server.v1_6_R2.EntityVillager;
-import net.minecraft.server.v1_6_R2.PathfinderGoalLookAtPlayer;
-import net.minecraft.server.v1_6_R2.PathfinderGoalLookAtTradingPlayer;
-import net.minecraft.server.v1_6_R2.World;
+import net.minecraft.server.v1_6_R3.EntityAgeable;
+import net.minecraft.server.v1_6_R3.EntityHuman;
+import net.minecraft.server.v1_6_R3.EntityVillager;
+import net.minecraft.server.v1_6_R3.PathfinderGoalLookAtPlayer;
+import net.minecraft.server.v1_6_R3.PathfinderGoalLookAtTradingPlayer;
+import net.minecraft.server.v1_6_R3.World;
 
 /**
  * EntityShopKeeper.java
@@ -49,7 +49,7 @@ public class EntityShopKeeper extends EntityVillager {
     public EntityShopKeeper(World world){
         super(world);
         try{
-            Field gsa = net.minecraft.server.v1_6_R2.PathfinderGoalSelector.class.getDeclaredField("a");
+            Field gsa = net.minecraft.server.v1_6_R3.PathfinderGoalSelector.class.getDeclaredField("a");
             gsa.setAccessible(true);
             gsa.set(this.goalSelector, new UnsafeList<Object>());
             gsa.set(this.targetSelector, new UnsafeList<Object>());

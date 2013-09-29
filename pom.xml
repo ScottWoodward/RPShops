@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.scottwoodward.rpshops</groupId>
 	<artifactId>RPShops</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>RPShops</name>
 	<properties>
 		<build.number>SNAPSHOT</build.number>
@@ -24,7 +24,7 @@
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
-			<version>1.6.2-R0.1</version>
+			<version>1.6.4-R0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>net.milkbowl</groupId>
